@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView,FormView
+from django.views.generic import TemplateView,FormView,DetailView
 from .forms import ContactForm
 from django.urls import reverse_lazy
 from django.views.generic.list import ListView
@@ -26,5 +26,9 @@ class BlogPageView(ListView):
     model = Blog
     context_object_name = "blogs"
 
-class BlogDetailPageView(TemplateView):
+class BlogDetailPageView(DetailView):
     template_name = "single-blog.html"
+    model = Blog
+    context_object_name = "blog"
+    slug_url_kwarg = 'slug'
+
