@@ -6,5 +6,5 @@ urlpatterns = [
     path('about/',AboutPageView.as_view(),name='about-page'),
     path('contact/',ContactView.as_view(),name='contact-page'),
     path('blog/',BlogPageView.as_view(),name='blog-page'),
-    path('blog/1',BlogDetailPageView.as_view(),name='blog-detail-page'),
+    path('blog/<slug:slug>',BlogDetailPageView.as_view(),name='blog-detail-page'),
 ]

@@ -118,7 +118,7 @@
                                 <div class="blog_post">
                                     <img src="{{blog.photo.url}}" alt="">
                                     <div class="blog_details">
-                                        <a href="single-blog.html">
+                                        <a href="{% url 'blog-detail-page' blog.slug %}">
                                             <h2>{{blog.title}}</h2>
                                         </a>
                                         <p>{{blog.content|truncatewords:15}}</p>
